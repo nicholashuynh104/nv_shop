@@ -109,10 +109,6 @@ class CartController extends Controller
             );
             Session::put('cart',$cart);
         }
-
-        Session::save();
-
-    }
     public function delete_product($session_id){
         $cart = Session::get('cart');
         // echo '<pre>';
