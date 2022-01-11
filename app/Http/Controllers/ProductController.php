@@ -36,16 +36,7 @@ class ProductController extends Controller
 
 
     }
-    public function all_product(){
-        $this->AuthLogin();
-    	$all_product = DB::table('tbl_product')
-        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-        ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
-        ->orderby('tbl_product.product_id','desc')->get();
-    	$manager_product  = view('admin.all_product')->with('all_product',$all_product);
-    	return view('admin_layout')->with('admin.all_product', $manager_product);
 
-    }
     public function save_product(Request $request){
          $this->AuthLogin();
         $data = array();
