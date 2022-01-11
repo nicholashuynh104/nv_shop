@@ -28,20 +28,6 @@ class CategoryPost extends Controller
         $this->AuthLogin();
         return view('admin.category_post.add_category');
     }
-    public function save_category_post(Request $request)
-    {
-        $this->AuthLogin();
-        $data = array();
-        $cate_post = new  CatePost();
-        $cate_post->cate_post_name =$request->cate_post_name;
-        $cate_post->cate_post_slug =$request->cate_post_slug;
-        $cate_post->cate_post_desc =$request->cate_post_desc;
-        $cate_post->cate_post_status =$request->cate_post_status;
-        $cate_post->save();
-        DB::table('tbl_category_post')->insert($data);
-        Session::put('message','Thêm danh mục bài viết thành công');
-        return Redirect::to('add-cate-post');
-    }
     public function all_cate_post()
     {
         $this->AuthLogin();
