@@ -123,18 +123,7 @@ class CheckoutController extends Controller
             echo $output;
         }
     }
-    public function view_order($orderId){
-        $this->AuthLogin();
-        $order_by_id = DB::table('tbl_order')
-        ->join('tbl_customers','tbl_order.customer_id','=','tbl_customers.customer_id')
-        ->join('tbl_shipping','tbl_order.shipping_id','=','tbl_shipping.shipping_id')
-        ->join('tbl_order_details','tbl_order.order_id','=','tbl_order_details.order_id')
-        ->select('tbl_order.*','tbl_customers.*','tbl_shipping.*','tbl_order_details.*')->first();
-
-        $manager_order_by_id  = view('admin.view_order')->with('order_by_id',$order_by_id);
-        return view('admin_layout')->with('admin.view_order', $manager_order_by_id);
-
-    }
+    
     public function login_checkout(Request $request){
          //slide
         $slider = Slider::orderBy('slider_id','DESC')->where('slider_status','1')->take(4)->get();
