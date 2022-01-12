@@ -13,7 +13,7 @@
           <option value="2">Bulk edit</option>
           <option value="3">Export</option>
         </select>
-        <button class="btn btn-sm btn-default">Apply</button>                
+        <button class="btn btn-sm btn-default">Apply</button>
       </div>
       <div class="col-sm-4">
       </div>
@@ -46,7 +46,7 @@
             <th>Hình ảnh</th>
             <th>Mô tả</th>
             <th>Tình trạng</th>
-            
+
             <th style="width:30px;"></th>
           </tr>
         </thead>
@@ -61,17 +61,17 @@
               <?php
                if($slide->slider_status==1){
                 ?>
-                <a href="{{URL::to('/unactive-slide/'.$slide->slider_id)}}"><span class="fa-thumb-styling fa fa-thumbs-up"></span></a>
+                <a href="{{URL::to('/unactive-slide/'.$slide->slider_id)}}"><i class="far fa-eye"></i></a>
                 <?php
                  }else{
-                ?>  
-                 <a href="{{URL::to('/active-slide/'.$slide->slider_id)}}"><span class="fa-thumb-styling fa fa-thumbs-down"></span></a>
+                ?>
+                 <a href="{{URL::to('/active-slide/'.$slide->slider_id)}}"><i class="fas fa-eye-slash"></i></a>
                 <?php
                }
               ?>
             </span></td>
             <td>
-             
+
               <a onclick="return confirm('Bạn có chắc là muốn xóa slide này ko?')" href="{{URL::to('/delete-slide/'.$slide->slider_id)}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i>
               </a>
@@ -84,11 +84,11 @@
     </div>
     <footer class="panel-footer">
       <div class="row">
-        
+
         <div class="col-sm-5 text-center">
           <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
         </div>
-        <div class="col-sm-7 text-right text-center-xs">                
+        <div class="col-sm-7 text-right text-center-xs">
           <ul class="pagination pagination-sm m-t-none m-b-none">
               {!!$all_slide->links()!!}
           </ul>

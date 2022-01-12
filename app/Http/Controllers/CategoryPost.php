@@ -28,14 +28,6 @@ class CategoryPost extends Controller
         $this->AuthLogin();
         return view('admin.category_post.add_category');
     }
-    public function all_cate_post()
-    {
-        $this->AuthLogin();
-
-        $all_cate_post = DB::table('tbl_category_post')->orderBy('cate_post_id','DESC')->paginate(10);
-        return view('admin.category_post.all_cate_post')->with('all_cate_post', $all_cate_post);
-    }
-
     public function save_category_post(Request $request)
     {
         $this->AuthLogin();
@@ -49,6 +41,13 @@ class CategoryPost extends Controller
         DB::table('tbl_category_post')->insert($data);
         Session::put('message','Thêm danh mục bài viết thành công');
         return Redirect::to('add-cate-post');
+    }
+    public function all_cate_post()
+    {
+        $this->AuthLogin();
+
+        $all_cate_post = DB::table('tbl_category_post')->orderBy('cate_post_id','DESC')->paginate(10);
+        return view('admin.category_post.all_cate_post')->with('all_cate_post', $all_cate_post);
     }
 
     public function unactive_cate_post($cate_id)

@@ -345,7 +345,7 @@
                                     </h2>
                                     <p>Mã:ID<span id="product_quickview_id"></span></p>
                                     <span>
-                                        <h2 style="color: #FE980F">Giá SP : <span id="product_quickview_price"></span></h2><br/>
+                                        <h4>Giá: <span id="product_quickview_price"></span></h4>
                                         <label>Số lượng:</label>
 <!--                                         <input type="number" name="qty" min="1" class="cart_product_qty_" value="1" />
  -->                                        <input type="hidden" name="productid_hidden" min="" />
@@ -363,15 +363,14 @@
                                     <div id="product_quickview_button"></div>
                                     <div id="product_quickview_value"></div>
                                 </div>
-
+                                <br/>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                          <h4 class="quickview">Chi tiết sản phẩm</h4>
+                                        {{-- <h4 class="quickview">Chi tiết sản phẩm</h4> --}}
                                     <fieldset>
 <!--                                         <span style="width: 100%" id="product_quickview_desc"></span>
- -->                                        <span style="width: 100%" id="product_quickview_content"></span>
-
+-->                                        <span style="width: 100%" id="product_quickview_content"></span>
                                     </fieldset>
                                 </div>
                             </div>
@@ -762,7 +761,7 @@
 
                         <!-- unit banner area end -->
                         <!-- product section start -->
-                      
+
                 </div>
             </div>
     </div>
